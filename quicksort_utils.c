@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 15:13:35 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 18:55:06 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/03 23:02:26 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_qs_block	*new_block_from_block(t_split_block_input *_in)
 
 t_bool	lst_range(t_list **_lst, int min, int max)
 {
-	t_list *current;
+	t_list	*current;
 
 	current = *_lst;
 	while (current)

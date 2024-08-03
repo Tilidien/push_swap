@@ -6,100 +6,11 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 16:54:54 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 20:06:10 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/03 22:59:48 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void print_stacks(t_ps_data *_data)
-{
-	printf("StackA:%d\n", (int)lstcount(&_data->stack_a));
-	t_list *a = _data->stack_a;
-	int i = 0;
-	while (a)
-	{
-		printf("%d:\t%d\n", i, *(int *)a->content);
-		a = a->next;
-		if (a == _data->stack_a)
-			break ;
-		i++;
-	}
-
-	printf("StackB:%d\n",(int)lstcount(&_data->stack_b));
-	t_list *b = _data->stack_b;
-	i = 0;
-	while (b)
-	{
-		printf("%d:\t%d\n", i, *(int *)b->content);
-		b = b->next;
-		if (b == _data->stack_b)
-			break ;
-		i++;
-	}
-
-}
-
-void print_blocks(t_ps_data *_data)
-{
-	t_list *a = _data->blocklist_a;
-	
-	int i = 0;
-	while (a)
-	{
-		t_qs_block *block = (t_qs_block *)a->content;
-		printf("block %d:\n\tmin:\t%d\n\tmax:\t%d\n\tinstr:\t", i, block->min, block->max);
-		if (block->rotate_instr == ps_ra)
-			printf("ps_ra\n");
-		if (block->rotate_instr == ps_rra)
-			printf("ps_rra\n");
-		if (block->rotate_instr == ps_rb)
-			printf("ps_rb\n");
-		if (block->rotate_instr == ps_rrb)
-			printf("ps_rrb\n");
-		if (block->sorted)
-			printf("\tsorted:\tTRUE\n");
-		else
-			printf("\tsorted:\tFALSE\n");
-		a = a->next;
-		if (a == _data->blocklist_a)
-			break ;
-		i++;
-	}
-
-	t_list *b = _data->blocklist_b;
-	
-	i = 0;
-	while (b)
-	{
-		t_qs_block *block = (t_qs_block *)b->content;
-		printf("block %d:\n\tmin:\t%d\n\tmax:\t%d\n\tinstr:\t", i, block->min, block->max);
-		if (block->rotate_instr == ps_ra)
-			printf("ps_ra\n");
-		if (block->rotate_instr == ps_rra)
-			printf("ps_rra\n");
-		if (block->rotate_instr == ps_rb)
-			printf("ps_rb\n");
-		if (block->rotate_instr == ps_rrb)
-			printf("ps_rrb\n");
-		if (block->sorted)
-			printf("\tsorted:\tTRUE\n");
-		else
-			printf("\tsorted:\tFALSE\n");
-		b = b->next;
-		if (b == _data->blocklist_b)
-			break ;
-		i++;
-	}
-	printf("x\n");
-	fflush(stdout);
-}
-
-void report(t_ps_data *_data)
-{
-	print_blocks(_data);
-	print_stacks(_data);
-}
 
 static void	split_block(t_split_block_input *_in)
 {
@@ -151,9 +62,6 @@ static void	split_block_stub(t_ps_data *_data, t_qs_block *_block)
 
 static t_qs_block	*split_next_block(t_ps_data *_data)
 {
-	printf("splitblock\n");
-	fflush(stdout);
-	report(_data);
 	t_qs_block	*current;
 
 	current = (t_qs_block *)_data->blocklist_a->content;
@@ -208,8 +116,6 @@ void	quicksort(t_ps_data *_data)
 		current = NULL;
 		while (!current)
 			current = split_next_block(_data);
-		printf("___________________\n");
-		report(_data);
 		do_algo_for_block(_data, current);
 		if (current->rotate_instr == ps_rb || current->rotate_instr == ps_rrb)
 			lstdelone(lstpop(&_data->blocklist_b), free);

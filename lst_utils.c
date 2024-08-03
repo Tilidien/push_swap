@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:58:03 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 14:59:49 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/03 23:00:46 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,3 @@ void	lstdelone(t_list *_lst, void (*_del)(void *))
 		free(_lst);
 	}
 }
-
