@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 15:02:31 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 15:05:11 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/04 00:22:02 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,4 @@ t_list	*lst_new_elem_freeonfail(void *_content)
 	elem->next = 0;
 	elem->prev = 0;
 	return (elem);
-}
-
-void	ft_nop(void *_sth)
-{
-	_sth = 0;
 }

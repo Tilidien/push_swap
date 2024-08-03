@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:14:56 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 20:37:29 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/04 00:32:49 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	predef_alg_samestack_rev_2_0(void *_data)
 
 void	predef_alg_samestack_rev_2_1(void *_data)
 {
-
 	do_and_print(_data, ps_rra, FALSE);
 	do_and_print(_data, ps_rra, FALSE);
 	do_and_print(_data, ps_sa, FALSE);

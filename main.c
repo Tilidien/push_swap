@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:42:34 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 22:59:13 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/04 00:22:16 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_bool	parse_input(int _argc, char *_argv[], int *_numbers, t_list *_stack)
 	return (TRUE);
 }
 
-static void	memset(void *_mem, int _len, unsigned char _toset)
+static void	ft_memset(void *_mem, int _len, unsigned char _toset)
 {
 	unsigned char	*mem;
 
@@ -75,7 +75,7 @@ int	main(int _argc, char *_argv[])
 {
 	t_ps_data	stacks;
 
-	memset(&stacks, sizeof(t_ps_data), 0);
+	ft_memset(&stacks, sizeof(t_ps_data), 0);
 	ft_ferror(&stacks, NULL, 0);
 	if (_argc < 2)
 		return (write(2, "Error\n", 6), -1);

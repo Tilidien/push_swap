@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 16:54:54 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 22:59:48 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/04 00:32:37 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,6 @@ void	quicksort(t_ps_data *_data)
 	block->rotate_instr = ps_ra;
 	block->sorted = FALSE;
 	lstadd_front(&_data->blocklist_a, lst_new_elem(block));
-
 	while (unsorted_blocks_remain(_data))
 	{
 		current = NULL;

@@ -6,7 +6,7 @@
 /*   By: tgmelin <tgmelin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 13:06:26 by tgmelin           #+#    #+#             */
-/*   Updated: 2024/08/03 16:54:09 by tgmelin          ###   ########.fr       */
+/*   Updated: 2024/08/04 00:33:01 by tgmelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static int	get_smaller_elemets(t_list *_lst, int _len)
 	}
 	return (smaller_elements);
 }
-
 
 static int	get_permutation_rank(t_list *_perm, int _len)
 {
